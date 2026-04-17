@@ -3,10 +3,10 @@ public class Recipe
     public int Id { get; set; }
     public string? Name { get; set; }
     public string? Ingredients { get; set; }
-    public string? PreparationTime { get; set; }
+    public int PreparationTime { get; set; }
    public string? Category { get; set; }
    public int Portions { get; set; } 
-   public string Difficulty { get; set; }
+   public string? Difficulty { get; set; }
    public string? Instructions { get; set; }
    public DateTime CreatedAt { get; set; }
 
@@ -20,7 +20,7 @@ public class Recipe
     int id,
     string? name,
     string? ingredients,
-    string? preparationTime,
+    int preparationTime,
     string? category,
     int portions,
     string? difficulty,
