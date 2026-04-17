@@ -1,2 +1,71 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Collections.Generic;
+
+Console.WriteLine("=====================================");
+Console.WriteLine("Bienvenido al sistema de recetas RecipeSys!");
+Console.WriteLine("Aquí podrás agregar, mostrar, buscar, filtrar, editar y eliminar tus recetas favoritas.");
+Console.WriteLine("=====================================");
+
+bool running = true;
+List<Recipe> recipes = new List<Recipe>();
+
+while(running)
+{
+    Console.WriteLine("=====================================");
+    Console.WriteLine("Seleccione una opción:");
+    Console.WriteLine("=====================================");
+    Console.WriteLine("1. Agregar receta");
+    Console.WriteLine("2. Mostrar recetas");
+    Console.WriteLine("3. Buscar receta por nombre");
+    Console.WriteLine("4. Filtrar recetas por categoría");
+    Console.WriteLine("5. Editar receta");
+    Console.WriteLine("6. Eliminar receta");
+    Console.WriteLine("7. Salir");
+    Console.WriteLine("=====================================");
+
+    Console.WriteLine("Ingrese el número de la opción deseada (1-7): ");
+
+    try
+    {
+    string option = Console.ReadLine() ?? string.Empty;
+
+        switch (option)
+        {
+            case "1":
+                RecipeHelper.AddRecipe(recipes);
+                break;
+            case "2":
+                RecipeHelper.ShowRecipes(recipes);
+                break;
+            case "3":
+                RecipeHelper.SearchByName(recipes);
+                break;
+            case "4":
+                RecipeHelper.FilterByCategory(recipes);
+                break;
+            case "5":
+                RecipeHelper.EditRecipe(recipes);
+                break;
+            case "6":
+                RecipeHelper.DeleteRecipe(recipes);
+                break;
+            case "7":
+                running = false;
+                Console.WriteLine("Gracias por usar RecipeSys. ¡Hasta luego!");
+                break;
+            default:
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Opción no válida, por favor intente nuevamente.");
+                Console.ResetColor();
+                break;
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Error: {ex.Message}");
+        Console.ResetColor();
+    }
+}
+
+Console.ReadKey();
