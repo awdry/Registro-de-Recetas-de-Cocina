@@ -121,6 +121,60 @@ public static class RecipeHelper
             }
     }
 
+    public static void FilterByDifficulty(List<Recipe> recipes)
+    {
+        Console.WriteLine("Ingrese la dificultad de la receta que desea filtrar (Fácil, Media, Difícil):");
+        string difficulty = Console.ReadLine() ?? string.Empty;
+        
+        var result = recipes
+        .Where(r => r.Difficulty.ToLower() ==
+        difficulty.ToLower())
+        .ToList();
+
+        if (result.Count == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("No se encontraron recetas en esa dificultad.");
+            Console.ResetColor();
+            return;
+        }
+
+            foreach (var recipe in result)
+            {
+                Console.WriteLine(recipe.GetInfo());
+            }
+    }
+
+    public static void FilterByPreparationTime(List<Recipe> recipes)
+    {
+        Console.WriteLine("Ingrese el tiempo de preparación máximo (en minutos):");
+
+        if (!int.TryParse(Console.ReadLine(), out int maxTime))
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Entrada no válida. Por favor ingrese un número entero para el tiempo de preparación.");
+            Console.ResetColor();
+            return;
+        }
+
+        var result = recipes
+        .Where(r => r.PreparationTime <= maxTime)
+        .ToList();
+
+        if (result.Count == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("No se encontraron recetas con ese tiempo de preparación.");
+            Console.ResetColor();
+            return;
+        }
+
+            foreach (var recipe in result)
+            {
+                Console.WriteLine(recipe.GetInfo());
+            }
+    }
+
     public static void EditRecipe(List<Recipe> recipes)
     {
         Console.WriteLine("Ingrese el ID de la receta que desea editar:");
@@ -183,5 +237,5 @@ public static class RecipeHelper
         Console.WriteLine("Receta eliminada exitosamente.");
         Console.ResetColor();
     }
-    
+
 }

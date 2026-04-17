@@ -18,12 +18,14 @@ while(running)
     Console.WriteLine("2. Mostrar recetas");
     Console.WriteLine("3. Buscar receta por nombre");
     Console.WriteLine("4. Filtrar recetas por categoría");
-    Console.WriteLine("5. Editar receta");
-    Console.WriteLine("6. Eliminar receta");
-    Console.WriteLine("7. Salir");
+    Console.WriteLine("5. Filtrar recetas por dificultad");
+    Console.WriteLine("6. Filtrar recetas por tiempo de preparación");
+    Console.WriteLine("7. Editar receta");
+    Console.WriteLine("8. Eliminar receta");
+    Console.WriteLine("9. Salir");
     Console.WriteLine("=====================================");
 
-    Console.WriteLine("Ingrese el número de la opción deseada (1-7): ");
+    Console.WriteLine("Ingrese el número de la opción deseada (1-9): ");
 
     try
     {
@@ -44,12 +46,18 @@ while(running)
                 RecipeHelper.FilterByCategory(recipes);
                 break;
             case "5":
-                RecipeHelper.EditRecipe(recipes);
+                RecipeHelper.FilterByDifficulty(recipes);
                 break;
             case "6":
-                RecipeHelper.DeleteRecipe(recipes);
+                RecipeHelper.FilterByPreparationTime(recipes);
                 break;
             case "7":
+                RecipeHelper.EditRecipe(recipes);
+                break;
+            case "8":
+                RecipeHelper.DeleteRecipe(recipes);
+                break;
+            case "9":
                 running = false;
                 Console.WriteLine("Gracias por usar RecipeSys. ¡Hasta luego!");
                 break;
