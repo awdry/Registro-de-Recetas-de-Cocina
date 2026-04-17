@@ -21,14 +21,14 @@ public static class RecipeHelper
             Console.WriteLine("Ingrese la categoria de la receta (Desayuno, Almuerzo, Cena, Postre): ");
             string category = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("Ingrese el número de porciones que podría prepararse: ");
-            int portions = int.Parse(Console.ReadLine() ?? "0");
-
             Console.WriteLine("Ingrese la dificultad que podría tener la receta (Fácil, Media, Difícil): ");
             string difficulty = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("Digite los pasos para la preparacion: ");
+            Console.WriteLine("Digite los pasos para la preparacion (separados por comas): ");
             string instructions = Console.ReadLine() ?? string.Empty;
+
+            Console.WriteLine("Ingrese el número de porciones que podría prepararse: ");
+            int portions = int.Parse(Console.ReadLine() ?? "0");
 
             Recipe recipe = new Recipe (
                 id,
@@ -36,9 +36,9 @@ public static class RecipeHelper
                 ingredients,
                 preparationTime,
                 category,
-                portions,
                 difficulty,
-                instructions
+                instructions,
+                portions
             );
 
             recipes.Add(recipe);
@@ -196,20 +196,20 @@ public static class RecipeHelper
         Console.WriteLine("Ingrese los nuevos ingredientes (separados por comas):");
         recipe.Ingredients = Console.ReadLine() ?? recipe.Ingredients;
 
-        Console.WriteLine("Digite los nuevos pasos para la preparacion: ");
-        recipe.Instructions = Console.ReadLine() ?? recipe.Instructions;
-
         Console.WriteLine("Ingrese el nuevo tiempo de preparación (en minutos): ");
         recipe.PreparationTime = int.Parse(Console.ReadLine() ?? recipe.PreparationTime.ToString());
 
         Console.WriteLine("Ingrese la nueva categoría de la receta (Desayuno, Almuerzo, Cena, Postre): ");
         recipe.Category = Console.ReadLine() ?? recipe.Category;
 
-        Console.WriteLine("Ingrese el número de porciones que podría prepararse: ");
-        recipe.Portions = int.Parse(Console.ReadLine() ?? recipe.Portions.ToString());
-
         Console.WriteLine("Ingrese la dificultad que podría tener la receta (Fácil, Media, Difícil): ");
         recipe.Difficulty = Console.ReadLine() ?? recipe.Difficulty;
+
+        Console.WriteLine("Digite los nuevos pasos para la preparacion (separados por comas): ");
+        recipe.Instructions = Console.ReadLine() ?? recipe.Instructions;
+
+        Console.WriteLine("Ingrese el número de porciones que podría prepararse: ");
+        recipe.Portions = int.Parse(Console.ReadLine() ?? recipe.Portions.ToString());
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Receta editada exitosamente.");

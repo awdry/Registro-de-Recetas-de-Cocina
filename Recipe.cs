@@ -1,14 +1,14 @@
 public class Recipe
 {
-    public int Id { get; set; }
-    public string? Name { get; set; }
-    public string? Ingredients { get; set; }
-    public int PreparationTime { get; set; }
-   public string? Category { get; set; }
-   public int Portions { get; set; } 
-   public string? Difficulty { get; set; }
-   public string? Instructions { get; set; }
-   public DateTime CreatedAt { get; set; }
+public int Id { get; set; }
+public string? Name { get; set; }
+public string? Ingredients { get; set; }
+public int PreparationTime { get; set; }
+public string? Category { get; set; }
+public string? Difficulty { get; set; }
+public string? Instructions { get; set; }
+public int Portions { get; set; } 
+public DateTime CreatedAt { get; set; }
 
    public Recipe()
    {
@@ -22,9 +22,9 @@ public class Recipe
     string? ingredients,
     int preparationTime,
     string? category,
-    int portions,
     string? difficulty,
-    string? instructions)
+    string? instructions,
+    int portions)
 
     {
         Id = id;
@@ -32,9 +32,9 @@ public class Recipe
         Ingredients = ingredients;
         PreparationTime = preparationTime;
         Category = category;
-        Portions = portions;
         Difficulty = difficulty;
         Instructions = instructions;
+        Portions = portions;
         CreatedAt = DateTime.Now;
     }
 
@@ -44,11 +44,11 @@ public class Recipe
         $"Id: {Id}\n" +
         $"Name: {Name}\n" +
         $"Categoria: {Category}\n" +
-        $"Porciones: {Portions}\n" +
         $"Dificultad: {Difficulty}\n" +
         $"Ingredientes: {Ingredients}\n" +
         $"Tiempo de preparación: {PreparationTime} minutos\n" +
         $"Instrucciones: {Instructions}\n" +
+        $"Porciones: {Portions}\n" +
         $"Creado el: {CreatedAt}\n";
     }
 
