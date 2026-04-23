@@ -11,7 +11,6 @@ List<Recipe> recipes = new List<Recipe>();
 
 while(running)
 {
-    Console.WriteLine("=====================================");
     Console.WriteLine("Seleccione una opción:");
     Console.WriteLine("=====================================");
     Console.WriteLine("1. Agregar receta");
