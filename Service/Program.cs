@@ -13,7 +13,8 @@ List<Recipe> recipes = new List<Recipe>();
 
 while(running)
 {
-    Console.BackgroundColor = ConsoleColor.Cyan;
+
+    Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("Seleccione una opción:");
     Console.ResetColor();
     Console.WriteLine("=====================================");
@@ -42,7 +43,7 @@ while(running)
     Console.ResetColor(); 
     Console.WriteLine("=====================================");
 
-    Console.BackgroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
     Console.WriteLine("Ingrese el número de la opción deseada (1-9): ");
     Console.ResetColor();
     Console.WriteLine("=====================================");
