@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 
 Console.WriteLine("=====================================");
+Console.ForegroundColor = ConsoleColor.DarkCyan;
 Console.WriteLine("Bienvenido al sistema de recetas RecipeSys!");
 Console.WriteLine("Aquí podrás agregar, mostrar, buscar, filtrar, editar y eliminar tus recetas favoritas.");
+Console.ResetColor();
 Console.WriteLine("=====================================");
 
 bool running = true;
@@ -11,20 +13,39 @@ List<Recipe> recipes = new List<Recipe>();
 
 while(running)
 {
+    Console.BackgroundColor = ConsoleColor.Cyan;
     Console.WriteLine("Seleccione una opción:");
+    Console.ResetColor();
     Console.WriteLine("=====================================");
+    Console.ForegroundColor = ConsoleColor.DarkGreen; 
     Console.WriteLine("1. Agregar receta");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.DarkGray;
     Console.WriteLine("2. Mostrar recetas");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.DarkMagenta;
     Console.WriteLine("3. Buscar receta por nombre");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine("4. Filtrar recetas por categoría");
     Console.WriteLine("5. Filtrar recetas por dificultad");
     Console.WriteLine("6. Filtrar recetas por tiempo de preparación");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("7. Editar receta");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("8. Eliminar receta");
+    Console.ResetColor(); 
+    Console.ForegroundColor = ConsoleColor.DarkRed;
     Console.WriteLine("9. Salir");
+    Console.ResetColor(); 
     Console.WriteLine("=====================================");
 
+    Console.BackgroundColor = ConsoleColor.DarkGreen;
     Console.WriteLine("Ingrese el número de la opción deseada (1-9): ");
+    Console.ResetColor();
+    Console.WriteLine("=====================================");
 
     try
     {

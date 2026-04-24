@@ -85,7 +85,9 @@ public static class RecipeHelper
                 {
                     Console.WriteLine();
                     Console.WriteLine("============================");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ID: {reader["Id"]}");
+                    Console.ResetColor();
                     Console.WriteLine($"Nombre: {reader["Name"]}");
                     Console.WriteLine($"Categoría: {reader["Category"]}");
                     Console.WriteLine($"Dificultad: {reader["Difficulty"]}");
@@ -132,7 +134,9 @@ public static class RecipeHelper
                 while (reader.Read())
                 {
                     Console.WriteLine("\n============================");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ID: {reader["Id"]}");
+                    Console.ResetColor();
                     Console.WriteLine($"Nombre: {reader["Name"]}");
                     Console.WriteLine($"Categoría: {reader["Category"]}");
                     Console.WriteLine($"Dificultad: {reader["Difficulty"]}");
@@ -176,7 +180,9 @@ public static class RecipeHelper
                 while (reader.Read())
                 {
                     Console.WriteLine("\n============================");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ID: {reader["Id"]}");
+                    Console.ResetColor();
                     Console.WriteLine($"Nombre: {reader["Name"]}");
                     Console.WriteLine($"Categoría: {reader["Category"]}");
                     Console.WriteLine($"Dificultad: {reader["Difficulty"]}");
@@ -218,7 +224,9 @@ public static class RecipeHelper
                 while (reader.Read())
                 {
                     Console.WriteLine("\n============================");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ID: {reader["Id"]}");
+                    Console.ResetColor();
                     Console.WriteLine($"Nombre: {reader["Name"]}");
                     Console.WriteLine($"Dificultad: {reader["Difficulty"]}");
                     Console.WriteLine($"Tiempo: {reader["PreparationTime"]} minutos");
@@ -259,7 +267,9 @@ public static class RecipeHelper
                 while (reader.Read())
                 {
                     Console.WriteLine("\n============================");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ID: {reader["Id"]}");
+                    Console.ResetColor();
                     Console.WriteLine($"Nombre: {reader["Name"]}");
                     Console.WriteLine($"Tiempo: {reader["PreparationTime"]} minutos");
                     Console.WriteLine("============================");
