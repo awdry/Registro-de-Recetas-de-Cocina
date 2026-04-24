@@ -152,13 +152,11 @@ public static class RecipeHelper
         }
     }
 
-    public static void FilterByCategory(List<Recipe> recipes)
+    public static void ShowRecipes (List<Recipe> recipes, string category)
     {
         try
         {
-            Console.WriteLine("Ingrese la categoría (Desayuno, Almuerzo, Cena, Postre):");
-            string category = Console.ReadLine() ?? string.Empty;
-
+            
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
@@ -195,12 +193,11 @@ public static class RecipeHelper
         }
     }
 
-    public static void FilterByDifficulty(List<Recipe> recipes)
+    public static void FilterByDifficulty(List<Recipe> recipes, string difficulty)
     {
         try
         {
-            Console.WriteLine("Ingrese la dificultad (Fácil, Media, Difícil):");
-            string difficulty = Console.ReadLine() ?? string.Empty;
+
 
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {
@@ -237,18 +234,11 @@ public static class RecipeHelper
         }
     }
 
-    public static void FilterByPreparationTime(List<Recipe> recipes)
+    public static void ShowRecipes(List<Recipe> recipes, int maxTime)
     {
         try
         {
-            Console.WriteLine("Ingrese el tiempo máximo de preparación (en minutos):");
-            if (!int.TryParse(Console.ReadLine(), out int maxTime))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Entrada no válida.");
-                Console.ResetColor();
-                return;
-            }
+
 
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {

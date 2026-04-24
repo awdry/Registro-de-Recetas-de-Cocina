@@ -42,13 +42,19 @@ while(running)
                 RecipeHelper.SearchByName(recipes);
                 break;
             case "4":
-                RecipeHelper.FilterByCategory(recipes);
+                Console.WriteLine("Ingrese la categoría (Desayuno, Almuerzo, Cena, Postre):");
+                string category = Console.ReadLine() ?? string.Empty;
+                RecipeHelper.ShowRecipes(recipes, category);
                 break;
             case "5":
-                RecipeHelper.FilterByDifficulty(recipes);
+                Console.WriteLine("Ingrese la dificultad (Fácil, Media, Difícil):");
+                string difficulty = Console.ReadLine() ?? string.Empty;
+                RecipeHelper.FilterByDifficulty(recipes, difficulty);
                 break;
             case "6":
-                RecipeHelper.FilterByPreparationTime(recipes);
+                Console.WriteLine("Ingrese el tiempo máximo de preparación (en minutos):");
+                int maxTime = int.Parse(Console.ReadLine() ?? "0");
+                RecipeHelper.ShowRecipes(recipes, maxTime);
                 break;
             case "7":
                 RecipeHelper.EditRecipe(recipes);
