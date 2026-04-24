@@ -1,44 +1,44 @@
-public class Recipe
+public abstract class BaseRecipe
 {
-public int Id { get; set; }
-public string? Name { get; set; }
-public string? Ingredients { get; set; }
-public int PreparationTime { get; set; }
-public string? Category { get; set; }
-public string? Difficulty { get; set; }
-public string? Instructions { get; set; }
-public int Portions { get; set; } 
-public DateTime CreatedAt { get; set; }
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public string? Ingredients { get; set; }
+    public int PreparationTime { get; set; }
+    public string? Category { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-   public Recipe()
+// Constructor para inicializar la fecha de creación
+
+   public BaseRecipe()
    {
        CreatedAt = DateTime.Now;
    }
 
-   public Recipe(
+    public abstract string GetInfo();
+}
 
-    int id,
-    string? name,
-    string? ingredients,
-    int preparationTime,
-    string? category,
-    string? difficulty,
-    string? instructions,
-    int portions)
+public class Recipe : BaseRecipe
+{
+    public string? Difficulty { get; set; }
+    public string? Instructions { get; set; }
+    public int Portions { get; set; }
 
+    public Recipe() : base () { }
+
+    public Recipe(int id, string? name, string? ingredients, int preparationTime, string? category, string? difficulty, string? instructions, int portions) : base()
     {
-        Id = id;
-        Name = name;
-        Ingredients = ingredients;
-        PreparationTime = preparationTime;
-        Category = category;
+        base.Id = id;
+        base.Name = name;
+        base.Ingredients = ingredients;
+        base.PreparationTime = preparationTime;
+        base.Category = category;
         Difficulty = difficulty;
         Instructions = instructions;
         Portions = portions;
-        CreatedAt = DateTime.Now;
+        
     }
 
-    public string GetInfo()
+    public override string GetInfo()
     {
         return 
         $"Id: {Id}\n" +
